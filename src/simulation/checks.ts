@@ -167,7 +167,7 @@ function checkLots(events: SimEvent[], testId: string): Verdict {
   for (const e of events) {
     if (e.type !== 'inv.donate') continue;
     if (e.unsupported) {
-      if (e.forTest === testId) verdict = merge(verdict, fail(`A ferramenta não tem esse recurso: ${e.message}`));
+      if (e.forTest === testId) verdict = merge(verdict, fail(`Não deu para fazer o teste. ${e.message}`));
       continue;
     }
     if (e.outcome !== 'aceito') continue;
@@ -198,7 +198,7 @@ export function evaluateTests(tests: TestCase[], events: SimEvent[], flags: read
     const checker = checkers[test.check];
     let verdict: Verdict = null;
     for (const e of events) {
-      const v = e.unsupported && e.forTest === test.id ? fail(`A ferramenta não tem esse recurso: ${e.message}`) : checker(e, flags);
+      const v = e.unsupported && e.forTest === test.id ? fail(`Não deu para fazer o teste. ${e.message}`) : checker(e, flags);
       verdict = merge(verdict, v);
     }
     out[test.id] = verdict ?? pending;

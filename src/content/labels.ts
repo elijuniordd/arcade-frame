@@ -1,3 +1,4 @@
+import type { IconName } from '../components/ui/iconPaths';
 import type { BadgeId, BlockCategory, BlockQuality, CriterionStatus, FactKind, Step } from '../types';
 
 /** Títulos cotidianos primeiro; o termo técnico aparece como complemento. */
@@ -33,10 +34,10 @@ export const QUALITY_LABEL: Record<BlockQuality, string> = {
   prejudicial: 'Atrapalha',
 };
 
-export const STATUS_LABEL: Record<CriterionStatus, { text: string; icon: string }> = {
-  completo: { text: 'Completo', icon: '✔' },
-  parcial: { text: 'Parcial', icon: '◐' },
-  ausente: { text: 'Faltando', icon: '○' },
+export const STATUS_LABEL: Record<CriterionStatus, { text: string; icon: IconName }> = {
+  completo: { text: 'Completo', icon: 'check' },
+  parcial: { text: 'Parcial', icon: 'half' },
+  ausente: { text: 'Faltando', icon: 'circle' },
 };
 
 export const STEPS: { id: Step; label: string; tag: string }[] = [
@@ -47,13 +48,13 @@ export const STEPS: { id: Step; label: string; tag: string }[] = [
   { id: 'result', label: 'Concluir', tag: 'CONCLUIR' },
 ];
 
-export const BADGES: Record<BadgeId, { title: string; description: string; icon: string }> = {
-  investigar: { title: 'Olhar de investigação', description: 'Descobriu todas as informações essenciais de uma missão.', icon: '🔍' },
-  comunicar: { title: 'Pedido claro', description: 'Montou um pedido completo nos cinco critérios.', icon: '💬' },
-  testar: { title: 'Teste na prática', description: 'Executou todos os testes de uma missão.', icon: '🧪' },
-  melhorar: { title: 'Melhoria contínua', description: 'Revisou o pedido depois de um teste com falha e corrigiu o problema.', icon: '🔧' },
-  doacoes: { title: 'Estoque em ordem', description: 'Concluiu uma missão de Doações em ordem.', icon: '📦' },
-  vagas: { title: 'Vagas justas', description: 'Concluiu uma missão de Vagas para aprender.', icon: '🎓' },
-  agenda: { title: 'Agenda sem choques', description: 'Concluiu uma missão de Agenda da comunidade.', icon: '📅' },
-  oficina: { title: 'Oficina do Amanhã', description: 'Concluiu as seis variações.', icon: '⭐' },
+export const BADGES: Record<BadgeId, { title: string; description: string; icon: IconName }> = {
+  investigar: { title: 'Olhar de investigação', description: 'Descobriu todas as informações essenciais de uma missão.', icon: 'search' },
+  comunicar: { title: 'Pedido claro', description: 'Montou um pedido completo nos cinco critérios.', icon: 'chat' },
+  testar: { title: 'Teste na prática', description: 'Executou todos os testes de uma missão.', icon: 'flask' },
+  melhorar: { title: 'Melhoria contínua', description: 'Revisou o pedido depois de um teste com falha e corrigiu o problema.', icon: 'wrench' },
+  doacoes: { title: 'Estoque em ordem', description: 'Concluiu uma missão de Doações em ordem.', icon: 'box' },
+  vagas: { title: 'Vagas justas', description: 'Concluiu uma missão de Vagas para aprender.', icon: 'cap' },
+  agenda: { title: 'Agenda sem choques', description: 'Concluiu uma missão de Agenda da comunidade.', icon: 'calendar' },
+  oficina: { title: 'Oficina do Amanhã', description: 'Concluiu as seis variações.', icon: 'star' },
 };
